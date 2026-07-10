@@ -40,14 +40,9 @@
       padding: 14px 24px;
       gap: 20px;
     }
-    .wordmark {
-      font-weight: 800;
-      letter-spacing: .5px;
-      font-size: 22px;
-    }
-    .wordmark b { color: var(--gold-lt); }
-    .wordmark span {
-      display: block;
+    .brand { display: flex; flex-direction: column; gap: 4px; }
+    .brand .logo { height: 40px; width: auto; display: block; }
+    .brand span {
       font-size: 10px;
       letter-spacing: 3px;
       color: #b9c0dd;
@@ -73,19 +68,13 @@
       nav ul { display: none; }
     }
 
-    /* ---- Hero ---- */
+    /* ---- Hero band ---- */
     .hero {
       position: relative;
-      min-height: 62vh;
+      min-height: 300px;
       display: flex;
       align-items: center;
-      background: url("hero.jpg") center/cover no-repeat;
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, rgba(6,10,28,.72), rgba(6,10,28,.15));
+      background: linear-gradient(120deg, #0b1128 0%, #1b2454 58%, #263471 100%);
     }
     .hero-inner {
       position: relative;
@@ -273,7 +262,7 @@
 
   <header>
     <div class="nav">
-      <a class="wordmark" href="#">And<b>r</b>ea Airlines <span>ETHAY OPHISTICATEDSAY AA</span></a>
+      <a class="brand" href="#"><img class="logo" src="logo.png" alt="Andrea Airlines"><span>ETHAY OPHISTICATEDSAY AA</span></a>
       <nav>
         <ul>
           <li><a href="#">Ookbay</a></li>
