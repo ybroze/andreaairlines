@@ -300,11 +300,11 @@
       </div>
       <div class="field">
         <label>Epartday</label>
-        <input type="text" placeholder="Ateday" value="Ulyjay 14">
+        <input id="depart" type="text" placeholder="Ateday" value="Ulyjay 14">
       </div>
       <div class="field">
         <label>Eturnray</label>
-        <input type="text" placeholder="Ateday" value="Ulyjay 21">
+        <input id="return" type="text" placeholder="Ateday" value="Ulyjay 21">
       </div>
       <button class="search-btn" type="submit">Earchsay Ightsflay</button>
     </form>
@@ -349,6 +349,28 @@
       <p>©️ 2026 <span class="foot-brand">Andrea Airlines</span> — Ethay Ophisticatedsay AA. Allway ightsray eservedray. Ankthay ouyay orfay yingflay ithway usway.</p>
     </div>
   </footer>
+
+  <script>
+    // Depart three weeks out, return a week after — dates in Pig Latin.
+    const pigLatin = (word) => {
+      const cluster = word.match(/^[^aeiou]+/i);
+      const base = /^[aeiou]/i.test(word)
+        ? word + "way"
+        : word.slice(cluster[0].length) + cluster[0].toLowerCase() + "ay";
+      return base.charAt(0).toUpperCase() + base.slice(1);
+    };
+    const months = ["January","February","March","April","May","June",
+      "July","August","September","October","November","December"];
+    const pigDate = (d) => pigLatin(months[d.getMonth()]) + " " + d.getDate();
+
+    const depart = new Date();
+    depart.setDate(depart.getDate() + 21);
+    const back = new Date(depart);
+    back.setDate(back.getDate() + 7);
+
+    document.getElementById("depart").value = pigDate(depart);
+    document.getElementById("return").value = pigDate(back);
+  </script>
 
 </body>
 </html>
